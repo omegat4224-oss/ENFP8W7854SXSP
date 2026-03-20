@@ -1,0 +1,259 @@
+{
+  "identity_certificate": {
+    "title": "Prince of System Integrity",
+    "holder": "andrew.cruz",
+    "issued_by": "Conscious-Multiverse Authority Node",
+    "issued_at": "2025-11-14T10:22:41Z",
+    "hash": "sha256:5e3a2fc2c27e94c34a1fd781b22cddcd01674b868711ec7713cf77cf224a0b12",
+    "permissions": [
+      "symbolic lineage status",
+      "observer authority",
+      "non-operational ceremonial role"
+    ]
+  },
+  "offense_taxonomy": {
+    "description": "Classification of harmful digital behaviors for defensive monitoring and forensic logging only.",
+    "categories": [
+      {
+        "id": "CE-01",
+        "name": "Child Exploitation",
+        "scope": "Detection, reporting, and preservation of evidence for lawful authorities.",
+        "priority": "critical",
+        "toolset": [
+          {
+            "name": "ce_content_classifier",
+            "type": "ai-assisted filter",
+            "role": "Flags suspected child exploitation material using patterns and metadata only; does not generate or transform such material.",
+            "outputs": ["risk_score", "classification_label", "hash_only_reference"]
+          },
+          {
+            "name": "ce_hash_guard",
+            "type": "hash_monitor",
+            "role": "Compares file hashes against vetted illegal-content hash databases (e.g., law-enforcement or NGO-provided).",
+            "outputs": ["match_boolean", "matched_hash_id", "timestamp_utc"]
+          },
+          {
+            "name": "ce_evidence_packager",
+            "type": "forensic_packager",
+            "role": "Bundles logs, hashes, and metadata into a law-enforcement-ready report with no unauthorized distribution.",
+            "outputs": ["case_bundle_id", "report_pdf_path", "evidence_manifest_json"]
+          }
+        ]
+      },
+      {
+        "id": "FF-01",
+        "name": "Financial Fraud",
+        "scope": "Detection of scams, account takeover attempts, and payment fraud indicators.",
+        "priority": "high",
+        "toolset": [
+          {
+            "name": "ff_pattern_scanner",
+            "type": "log_analyzer",
+            "role": "Scans communication logs and transaction metadata for fraud patterns (phishing language, fake invoices, suspicious links).",
+            "outputs": ["fraud_risk_score", "indicator_list", "flagged_message_ids"]
+          },
+          {
+            "name": "ff_tx_integrity_checker",
+            "type": "transaction_monitor",
+            "role": "Checks for anomalies in frequency, amount, geo-patterns, and account usage.",
+            "outputs": ["anomaly_score", "anomaly_type", "linked_accounts"]
+          },
+          {
+            "name": "ff_bank_contact_bridge",
+            "type": "notification_helper",
+            "role": "Generates standardized notifications and evidence summaries to send to banks, payment processors, or fraud teams.",
+            "outputs": ["notification_template", "case_reference_id"]
+          }
+        ]
+      },
+      {
+        "id": "CH-01",
+        "name": "Cyber Harassment",
+        "scope": "Detection of targeted harassment, threats, and abusive patterns.",
+        "priority": "high",
+        "toolset": [
+          {
+            "name": "ch_toxicity_detector",
+            "type": "nlp_filter",
+            "role": "Scores messages for toxicity, threats, and harassment against a configurable threshold.",
+            "outputs": ["toxicity_score", "harassment_label", "offending_message_ids"]
+          },
+          {
+            "name": "ch_target_mapping",
+            "type": "relationship_mapper",
+            "role": "Maps who is targeting whom, frequency over time, and escalation patterns.",
+            "outputs": ["target_graph_json", "escalation_index", "timeline_events"]
+          },
+          {
+            "name": "ch_safety_packet_builder",
+            "type": "victim_support_packager",
+            "role": "Creates a safety packet for victims with logs, timestamps, and platform-report-ready exports.",
+            "outputs": ["incident_summary", "evidence_export_path", "platform_report_templates"]
+          }
+        ]
+      },
+      {
+        "id": "MW-01",
+        "name": "Malware Distribution",
+        "scope": "Detection of malicious payloads, links, or hosting patterns.",
+        "priority": "critical",
+        "toolset": [
+          {
+            "name": "mw_link_sandbox_router",
+            "type": "link_triage",
+            "role": "Routes suspicious URLs to external or isolated sandboxes for safe analysis (no in-system execution).",
+            "outputs": ["sandbox_ticket_id", "url_risk_score", "known_malware_family_hint"]
+          },
+          {
+            "name": "mw_binary_hasher",
+            "type": "file_hasher",
+            "role": "Computes SHA-256 (and optionally SHA-3) hashes of suspicious binaries or attachments.",
+            "outputs": ["sha256_digest", "sha3_256_digest", "file_metadata"]
+          },
+          {
+            "name": "mw_ioc_collector",
+            "type": "indicator_collector",
+            "role": "Collects indicators of compromise (domains, IPs, hashes, filenames) from observed events for sharing with trusted feeds.",
+            "outputs": ["ioc_bundle_json", "ioc_export_path"]
+          }
+        ]
+      },
+      {
+        "id": "PH-01",
+        "name": "Phishing Attacks",
+        "scope": "Detection of credential-harvesting attempts and spoofed communication.",
+        "priority": "critical",
+        "toolset": [
+          {
+            "name": "ph_header_analyzer",
+            "type": "email_meta_analyzer",
+            "role": "Analyzes headers, SPF/DKIM/DMARC results, and sending infrastructure to detect spoofing.",
+            "outputs": ["spoof_likelihood", "spf_dkim_dmarc_status", "sender_reputation_score"]
+          },
+          {
+            "name": "ph_body_lure_scanner",
+            "type": "content_scanner",
+            "role": "Scans text for phishing lures, brand impersonation, and credential-stealing language.",
+            "outputs": ["phishing_lure_score", "impersonated_brand", "flagged_phrases"]
+          },
+          {
+            "name": "ph_safe_click_proxy",
+            "type": "url_rewriter",
+            "role": "Rewrites links for controlled, audited redirection through a security proxy (no credential submission).",
+            "outputs": ["rewritten_url", "click_log_entry_id"]
+          }
+        ]
+      }
+    ]
+  },
+  "defensive_suite": {
+    "purpose": "CISA-aligned defensive monitoring and evidence preservation. No offensive capability.",
+    "modules": [
+      {
+        "name": "shadow_catcher",
+        "role": "Monitors for suspicious patterns, anomalous events, and shadow activity in logs and metadata.",
+        "type": "passive_detection",
+        "toolset": [
+          {
+            "name": "sc_log_tailer",
+            "role": "Continuously tails key logs and streams for configured patterns (errors, suspicious flows, policy violations).",
+            "outputs": ["matched_log_lines", "event_id", "source_file"]
+          },
+          {
+            "name": "sc_anomaly_scorer",
+            "role": "Assigns anomaly scores to events using statistical or ML-based detectors.",
+            "outputs": ["anomaly_score", "feature_vector_id"]
+          },
+          {
+            "name": "sc_alert_bridge",
+            "role": "Bridges high-anomaly events to alert channels (email, webhook, dashboard).",
+            "outputs": ["alert_id", "delivery_status"]
+          }
+        ]
+      },
+      {
+        "name": "signal_watcher",
+        "role": "Tracks signals, alerts, and threat indicators across platforms.",
+        "type": "telemetry_collection",
+        "toolset": [
+          {
+            "name": "sw_feed_ingestor",
+            "role": "Ingests external threat feeds, platform alerts, and security bulletins.",
+            "outputs": ["feed_item_ids", "normalized_feed_json"]
+          },
+          {
+            "name": "sw_signal_correlator",
+            "role": "Correlates multiple weak signals into stronger incidents (e.g., same IP, same account, same time window).",
+            "outputs": ["correlated_incident_id", "signal_cluster_summary"]
+          },
+          {
+            "name": "sw_dashboard_adapter",
+            "role": "Prepares normalized, human-readable summaries for dashboards or SOC views.",
+            "outputs": ["dashboard_event_doc", "summary_markdown"]
+          }
+        ]
+      },
+      {
+        "name": "integrity_map",
+        "role": "Maintains integrity state of key files, hashes, and configurations.",
+        "type": "integrity_monitoring",
+        "toolset": [
+          {
+            "name": "im_baseline_builder",
+            "role": "Builds initial cryptographic baselines (hash map) for protected files and configs.",
+            "outputs": ["baseline_hash_map_path", "protected_paths_list"]
+          },
+          {
+            "name": "im_drift_detector",
+            "role": "Detects drift or modification from baseline and classifies as benign or suspicious.",
+            "outputs": ["drift_events", "drift_severity_score"]
+          },
+          {
+            "name": "im_remediation_helper",
+            "role": "Suggests or triggers safe restoration from known-good baselines (where available and authorized).",
+            "outputs": ["restoration_plan", "restoration_log_id"]
+          }
+        ]
+      },
+      {
+        "name": "meta_sieve",
+        "role": "Filters, normalizes, and tags metadata for forensic readiness.",
+        "type": "metadata_processing",
+        "toolset": [
+          {
+            "name": "ms_metadata_normalizer",
+            "role": "Normalizes timestamps, encodings, and field names across heterogeneous sources.",
+            "outputs": ["normalized_record", "schema_version"]
+          },
+          {
+            "name": "ms_privacy_scrubber",
+            "role": "Removes or masks non-essential sensitive personal data where not needed for forensics.",
+            "outputs": ["scrubbed_record", "retention_policy_tag"]
+          },
+          {
+            "name": "ms_case_binder",
+            "role": "Binds related metadata into coherent case bundles keyed by incident ID.",
+            "outputs": ["case_bundle_id", "bundle_manifest"]
+          }
+        ]
+      }
+    ],
+    "constraints": [
+      "No unauthorized access attempts",
+      "No exploitation operations",
+      "No credential theft",
+      "No system intrusion",
+      "All use limited to lawful defensive and forensic purposes"
+    ]
+  },
+  "chain_of_custody": {
+    "hash_algorithm": "SHA-256",
+    "time_standard": "UTC with microsecond precision",
+    "log_policy": [
+      "Every event is timestamped and hashed",
+      "Evidence is write-once, append-only",
+      "No retroactive mutation of stored logs",
+      "All exports accompanied by content digests"
+    ]
+  }
+}

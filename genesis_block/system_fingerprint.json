@@ -1,0 +1,11 @@
+{
+  "device": "Lenovo Windows 11 + Android Termux",
+  "cpu": "AMD Ryzen 7 8840HS",
+  "gpu": "Radeon 780M + Adreno (mobile)",
+  "ram": "16GB",
+  "os": "Windows 11 Home 25H2 + Android API 36",
+  "vulkan": true,
+  "termux": true,
+  "hash": "fb3f8e7fceb2f46d21d9d58fe7b5f0016cc6c55d7f7e480270cbb8540793b434",
+  "timestamp": "2026-03-20T01:51:04Z"
+}

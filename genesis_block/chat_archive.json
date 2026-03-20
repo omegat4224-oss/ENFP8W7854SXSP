@@ -1,0 +1,17 @@
+{
+  "source": "ChatGPT + local memory + logs",
+  "entries": [
+    {
+      "type": "chat",
+      "timestamp": "AUTO",
+      "content": "All prior conversations compressed or summarized"
+    },
+    {
+      "type": "logcat",
+      "timestamp": "AUTO",
+      "content": "Key Android diagnostic insights"
+    }
+  ],
+  "hash": "2c51167493bef2f89b85c41977d17bf2d48a5d15682798fd1345573f392eafc0",
+  "timestamp": "2026-03-20T01:51:04Z"
+}
