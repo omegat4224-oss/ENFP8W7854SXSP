@@ -1,0 +1,70 @@
+{
+  "genesis": {
+    "timestamp": "2026-03-20T01:51:04Z",
+    "files": [
+      "README.md",
+      "chat_archive.json",
+      "ip_manifest.json",
+      "system_fingerprint.json",
+      "provenance.log"
+    ],
+    "file_hashes": {
+      "README.md": "73e2a11c95e9be5bcb052e70542d5b2cf6c07386885fc9f07033128d97acec74",
+      "chat_archive.json": "b5f859e7f73e611b91f94c83c286e9fe1d2d1101cb5b1ba60ea120eae2a82289",
+      "ip_manifest.json": "73c7e800817ace4c99d97e772fd11cef938ce4f2cfae44259a03597805bf2a98",
+      "system_fingerprint.json": "3e5d459f450dfdbce929be6d3b85f62e919d2bba7f30b540c6cffa637c4642e6",
+      "provenance.log": "edfcb055f81ea0af8fba5c271c21cc206dbfd999f86284f07da0f4e8a062a5fd"
+    },
+    "combined_hash": "d131ee2d25eb291f84acc4a3774de39490d161b35bcbd25547d4236a1206a46c",
+    "refreshed_payloads": {
+      "chat_archive.json": {
+        "source": "ChatGPT + local memory + logs",
+        "entries": [
+          {
+            "type": "chat",
+            "timestamp": "AUTO",
+            "content": "All prior conversations compressed or summarized"
+          },
+          {
+            "type": "logcat",
+            "timestamp": "AUTO",
+            "content": "Key Android diagnostic insights"
+          }
+        ],
+        "hash": "2c51167493bef2f89b85c41977d17bf2d48a5d15682798fd1345573f392eafc0",
+        "timestamp": "2026-03-20T01:51:04Z"
+      },
+      "ip_manifest.json": {
+        "owner": "Andrew Lee Cruz",
+        "domains": [
+          "andrewleecruz.vip"
+        ],
+        "systems": [
+          "ReflectChain",
+          "Haptic Bridge",
+          "Fractal Chain"
+        ],
+        "claims": [
+          "23-gene fractal identity model",
+          "AI validation blockchain alternative",
+          "Haptic encoding pipeline",
+          "Termux sensor bridge"
+        ],
+        "timestamp": "2026-03-20T01:50:37Z",
+        "hash": "ede805fa08d5d9bc5e2eacb8e574b60386b48c0d28631af8a7446cecb9cba33d"
+      },
+      "system_fingerprint.json": {
+        "device": "Lenovo Windows 11 + Android Termux",
+        "cpu": "AMD Ryzen 7 8840HS",
+        "gpu": "Radeon 780M + Adreno (mobile)",
+        "ram": "16GB",
+        "os": "Windows 11 Home 25H2 + Android API 36",
+        "vulkan": true,
+        "termux": true,
+        "hash": "fb3f8e7fceb2f46d21d9d58fe7b5f0016cc6c55d7f7e480270cbb8540793b434",
+        "timestamp": "2026-03-20T01:51:04Z"
+      }
+    }
+  },
+  "genesis_hash": "af8ea546c88547e2f5499a76889d8848b7aff4e284587d4f60f80f357d8b8f02"
+}
